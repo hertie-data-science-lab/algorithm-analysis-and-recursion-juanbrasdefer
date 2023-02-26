@@ -17,8 +17,11 @@ def TowerOfHanoi(n , from_rod, to_rod, aux_rod):
         print ("Move disk 1 from source",from_rod,"to destination",to_rod)
         return
     
-    #in any other situation, we want our code to get us to a point of n == 1
-    #so
+    #in any other situation, the code moves around the order of
+    #the rods in recursion, so that destination goal changes in micro moves
+
+    #sorry, i really don't know how else to explain!! :))
+    
     else:
         TowerOfHanoi(n-1, from_rod, aux_rod, to_rod)
         print ("Move disk",n,"from source",from_rod,"to destination",to_rod)
