@@ -2,13 +2,28 @@
 """
 Created on Mon Feb 20 08:24:20 2023
 
-@author: Hannah
+@author: Juan Brasdefer, Fabian Pawelczyk
 """
 
-def TowerOfHanoi(n , from_rod, to_rod, aux_rod): 
+
+def TowerOfHanoi(n , from_rod, to_rod, aux_rod):
     
-    #delete the pass and replace with your recursive algorithm
-    pass
+    #our base case should be when we only have one disk left in our source rod
+    #this means that it triggers when n==1
+
+    #however, since it's recursive, this 'source rod' is not a fixed location
+    #but rather an idea to be executed at the micro level
+    if n == 1:
+        print ("Move disk 1 from source",from_rod,"to destination",to_rod)
+        return
+    
+    #in any other situation, we want our code to get us to a point of n == 1
+    #so
+    else:
+        TowerOfHanoi(n-1, from_rod, aux_rod, to_rod)
+        print ("Move disk",n,"from source",from_rod,"to destination",to_rod)
+        TowerOfHanoi(n-1, aux_rod, to_rod, from_rod)
+         
 
 
-TowerOfHanoi(3, 'A', 'C', 'B')  
+TowerOfHanoi(3,'A','B','C')
